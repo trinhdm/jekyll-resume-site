@@ -1,0 +1,107 @@
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { display: table; content: ''; }
+.clearfix:after { clear: both; }
+
+
+html, body, .contains, .header {
+	height: 100%;
+}
+
+body {
+	background: #fff;
+	color: $purple;
+	font: 400 22px/1.5 $secondFont;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+#main {
+  overflow:auto;
+  padding-bottom: 60px; /* this needs to be bigger than footer height*/
+}
+
+a {
+	outline: none;
+	color: $periwinkle-blue;
+	text-decoration: none;
+
+  &:hover, &:focus {
+    color: $purple;
+  	text-decoration: none;
+  }
+}
+
+::-moz-selection {
+    background: $light-blue;
+}
+
+::selection {
+    background: $light-blue;
+}
+
+
+.content > div:not(.title) {
+	padding: 0 2.25em;
+	font-size: 16px;
+
+  h1 {
+  	font-family: $titleFont;
+  }
+
+  h2 {
+  	color: $steel-blue;
+  	font-size: 1.25em;
+  	margin-top: 0;
+  }
+
+  a:hover {
+  	color: $light-blue;
+  	// border-bottom: 1px solid #69606b;
+  	padding-bottom: 2px;
+  }
+
+  b, i {
+    color: $steel-blue;
+  }
+
+  p {
+  	margin: 0 auto 1.5em auto;
+  }
+
+  li {
+  	list-style: none;
+		padding-left: 0;
+    text-indent: -1.7em;
+
+		&.skills:before {
+			content: "•";
+			color: $light-blue;
+			padding-right: 1em;
+		}
+
+    &.dev:before {
+      content: "\f121";
+      @include fa-li;
+    }
+
+    &.design:before {
+    	content: "\f08a";
+      @include fa-li;
+    }
+
+    &.tools:before {
+      content: "\f120";
+      @include fa-li;
+    }
+
+    &.cms:before {
+      content: "\f109";
+      @include fa-li;
+    }
+  }
+}

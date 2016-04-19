@@ -1,0 +1,20 @@
+.footer {
+  background-color: #EFEFEF;
+  color: $steel-blue;
+  padding: 10px 0 10px 190px;
+  font: 10pt $titleFont;
+  position: relative;
+  margin-top: -50px;
+  height: 50px;
+  clear:both;
+
+  @include phone {
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  @include tablet {
+    padding: 10px 0;
+    text-align: center;
+  }
+}

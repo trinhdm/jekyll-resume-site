@@ -1,0 +1,238 @@
+.md-perspective body  {
+	background: #fff;
+	-webkit-perspective: 600px;
+	-moz-perspective: 600px;
+	perspective: 600px;
+}
+
+.md-modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	overflow-y:auto;
+  max-height: 99%;
+	z-index: 2000;
+	visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.md-show {
+	visibility: visible;
+}
+
+.md-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	opacity: 0;
+	background: rgba(143,27,15,0.8);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.md-show ~ .md-overlay {
+	opacity: 1;
+	visibility: visible;
+}
+
+
+/* Content styles */
+.md-content {
+	color: $dark-gray-blue;
+	background: #fff !important;
+	position: relative;
+	border-radius: 3px;
+	margin: 0 auto;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+
+  h3 {
+    font: 1.9em $titleFont;
+    color: $purple;
+  	margin: 0;
+  	padding: 0.4em;
+  	text-align: center;
+  	opacity: 0.8;
+  	background: transparent;
+  	border-radius: 3px 3px 0 0;
+  }
+
+  h4 {
+    font: 1.1em $titleFont;
+    color: $purple;
+  }
+
+
+	p {
+	  margin: 0;
+	  font: 400 .9em $secondFont;
+
+		&:first-child {
+			text-align: right;
+			float: right;
+			padding-bottom: 10px;
+			padding-right: 90px;
+
+			@include phone {
+				padding-right: 0;
+				margin: 0 auto;
+			}
+
+			a {
+				padding-right: 2.5em;
+			}
+		}
+	}
+
+	.fa-modal {
+		padding-right: .5em !important;
+		font-size: 1.5em;
+	}
+
+  .main {
+    padding:15px 50px 30px;
+  }
+
+  > div {
+  	margin: 0 auto;
+
+    ul {
+    	margin: 0;
+    	padding: 0 0 30px 20px;
+
+      li {
+      	padding: 5px 0;
+      }
+    }
+  }
+
+  button {
+		color: #fff;
+		font: .8em $titleFont;
+		background: $steel-blue;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+  	display: block;
+  	margin: 0 auto;
+    border: none;
+    padding: 0.6em 1.2em;
+    cursor: pointer;
+
+		.fa {
+			color: $off-white !important;
+		}
+
+		&:hover {
+			background-color: $purple;
+			@include transition(all .5s ease);
+		}
+  }
+}
+
+.md-show ~ .md-overlay {
+	background: #efefef;
+}
+
+.md-show .md-content {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+}
+
+
+.modal-header {
+	h3 {
+    font: 1.9em $titleFont;
+    color: $purple;
+  	margin: 0;
+  	padding: 0.4em;
+  	text-align: center;
+  	opacity: 0.8;
+  	background: transparent;
+  	border-radius: 3px 3px 0 0;
+  }
+}
+
+.modal-backdrop.in  {
+  opacity: .2 !important;
+}
+
+.modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -o-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    box-shadow: 0 5px 15px rgba(0,0,0,0);
+    border-radius: 0;
+}
+
+.modal-header, .modal-footer {
+	border: 0px solid transparent;
+}
+
+.modal-body {
+	font: 400 .85em $secondFont;
+
+	h4 {
+    font: 1.3em $titleFont;
+    color: $purple;
+  }
+}
+
+.modal-footer {
+	padding: 15px 15px 22px;
+
+	p {
+		text-align: right;
+
+		@include phone {
+			padding-right: 0;
+			margin: 0 auto;
+		}
+
+		a {
+			padding-right: 2.5em;
+		}
+	}
+
+	button {
+		color: #fff;
+		font: .8em $titleFont;
+		background: $steel-blue;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		display: block;
+		margin: 0 auto;
+		border: none;
+		padding: 0.6em 1.2em;
+		cursor: pointer;
+
+		.fa {
+			color: $off-white !important;
+		}
+
+		&:hover {
+			background-color: $purple;
+			@include transition(all .5s ease);
+		}
+	}
+}

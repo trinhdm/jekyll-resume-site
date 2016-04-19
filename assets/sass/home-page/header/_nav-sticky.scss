@@ -1,0 +1,238 @@
+#hidden-sticky-nav ul {
+  /* mobile first */
+  position: fixed;
+  width: 90%;
+  max-width: 200px;
+  right: 5%;
+  bottom: 3.5%;
+  border-radius: 0.25em;
+  background: white;
+  visibility: hidden;
+  /* remove overflow:hidden if you want to create a drop-down menu - but then remember to fix/eliminate the list items animation */
+  overflow: hidden;
+  z-index: 1;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  @include transform(scale(0));
+  @include transform-origin(100% 100%);
+  @include transition(transform 0.3s, visibility 0s 0.3s);
+
+  @include phone {
+    bottom: 5px;
+    right: 10px;
+    padding-left: 0;
+  }
+}
+
+#hidden-sticky-nav ul li {
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  font: 600 .6em $secondFont;
+  text-transform: uppercase;
+  list-style: none;
+}
+
+#hidden-sticky-nav ul.is-visible {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  visibility: visible;
+  @include transform(scale(1));
+  @include stickynav-transition(0.3s, 0s 0s);
+}
+
+/* list items animation sliding in */
+#hidden-sticky-nav ul.is-visible li:nth-child(1) {
+  @include animation(sticky-slideIn 0.2s);
+}
+
+#hidden-sticky-nav ul.is-visible li:nth-child(2) {
+  @include animation(sticky-slideIn 0.3s);
+}
+
+#hidden-sticky-nav ul.is-visible li:nth-child(3) {
+  @include animation(sticky-slideIn 0.4s);
+}
+
+#hidden-sticky-nav ul.is-visible li:nth-child(4) {
+  @include animation(sticky-slideIn 0.5s);
+}
+
+#hidden-sticky-nav ul.is-visible li:nth-child(5) {
+  @include animation(sticky-slideIn 0.6s);
+}
+
+#hidden-sticky-nav li a {
+  display: block;
+  padding: 1.6em;
+  border-bottom: 1px solid $light-gray;
+}
+
+#hidden-sticky-nav li:last-child a {
+  border-bottom: none;
+}
+
+@media only screen and (min-width: 1170px) {
+  #hidden-sticky-nav ul {
+    background: transparent;
+    visibility: hidden;
+    @include transform(scale(1));
+    @include transition(all 0s);
+  }
+
+  #hidden-sticky-nav li {
+    display: inline-block;
+  }
+
+  #hidden-sticky-nav li a {
+    opacity: 1;
+    padding: .4em;
+    margin-left: 1.6em;
+    border-bottom: none;
+  }
+
+  #hidden-sticky-nav li a:hover {
+    color: $purple;
+  }
+
+  #hidden-sticky-nav.is-fixed ul {
+    /* when the user scrolls down, the navigation moves to the bottom right in Fixed position - as on touch devices */
+    padding-left: 0;
+    position: fixed;
+    width: 90%;
+    max-width: 200px;
+    bottom: 20px;
+    top: auto;
+    background: #efefef;
+    visibility: hidden;
+    @include transform(scale(0));
+  }
+
+  #hidden-sticky-nav.is-fixed ul li {
+    display: block;
+  }
+
+  #hidden-sticky-nav.is-fixed ul li a {
+    padding: 1.6em;
+    margin-left: 0;
+    border-bottom: 1px solid $off-white;
+  }
+
+  #hidden-sticky-nav ul.has-transitions {
+    /* this class is used to bring back transitions when the navigation moves at the bottom right */
+    @include stickynav-transition(0.3s, 0s 0.3s);
+  }
+
+  #hidden-sticky-nav ul.is-visible {
+    /* this class is used to bring back the navigation animation - as on touch devices */
+    visibility: visible;
+    @include transform(scale(1));
+    @include stickynav-transition(0.3s, 0s 0s);
+  }
+
+  #hidden-sticky-nav ul.is-hidden {
+    /* this class is used to animate the scale down the navigation when the user scrolls down with the navigation still open */
+    @include transform(scale(0));
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+  }
+}
+
+.sticky-trigger {
+  // box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  bottom: 5.5%;
+  right: 5.5%;
+  width: 44px;
+  height: 44px;
+  background: #efefef;
+  border-radius: 0.25em;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  z-index: 2;
+
+  @include phone {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+.sticky-trigger span {
+  /* the span element is used to create the menu icon */
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: $steel-blue;
+  top: 50%;
+  margin-top: -1px;
+  left: 50%;
+  margin-left: -10px;
+  @include transition(background 0.3s);
+}
+.sticky-trigger span::before, .sticky-trigger span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  background: inherit;
+  width: 100%;
+  height: 100%;
+  @include transform(translateZ(0));
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.3s, background 0s;
+  -moz-transition: -moz-transform 0.3s, background 0s;
+  transition: transform 0.3s, background 0s;
+}
+
+.sticky-trigger span::before {
+  top: -6px;
+  @include transform(rotate(0));
+}
+
+.sticky-trigger span::after {
+  bottom: -6px;
+  @include transform(rotate(0));
+}
+
+.sticky-trigger.menu-is-open {
+  box-shadow: none;
+}
+
+.sticky-trigger.menu-is-open span {
+  background: rgba(232, 74, 100, 0);
+}
+
+.sticky-trigger.menu-is-open span::before, .sticky-trigger.menu-is-open span::after {
+  background: $steel-blue;
+}
+
+.sticky-trigger.menu-is-open span::before {
+  top: 0;
+  @include transform(rotate(135deg));
+}
+
+.sticky-trigger.menu-is-open span::after {
+  bottom: 0;
+  @include transform(rotate(225deg));
+}
+
+@media only screen and (min-width: 1024px) {
+  .sticky-trigger {
+    /* the the menu triger is hidden by default on desktop devices */
+    visibility: hidden;
+    @include animation(sticky-fadeOut 0.2s linear);
+    @include transition(opacity 0.2s, visibility 0s 0.2s);
+  }
+
+  .is-fixed .sticky-trigger {
+    visibility: visible;
+    @include animation(sticky-fadeIn 0.3s linear);
+    @include transition(all 0s);
+  }
+}
+
+@import "keyframes";

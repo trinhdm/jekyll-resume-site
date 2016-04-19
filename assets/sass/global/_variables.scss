@@ -1,0 +1,101 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,800);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+
+
+/* FONT / COLORS
+============================================= */
+
+$dark-gray-blue: #516165;       // dark gray with a hint of blue
+$steel-blue: #7b8d92;           // some sort of light steel blue-gray
+$periwinkle-blue: #43939d;      // i thought this was teal initially..
+$light-blue: #A8C9CD;           // light blue
+$purple: #69606b;               // actually purple
+$dark-gray: #777;
+$light-gray: #ddd;
+$off-white: #efefef;
+
+
+$titleFont: 'Roboto Slab', Georgia, serif;
+$secondFont: 'Raleway', Arial, sans-serif;
+
+
+
+/* REGULAR MIXINS
+============================================= */
+
+@mixin fa-li {
+  font-family: 'FontAwesome';
+  float: left;
+  color: $light-blue;
+  padding-right: 0em;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin transform($args...) {
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+  transform: $args;
+}
+
+@mixin transform-origin($args...) {
+  -webkit-transform-origin: $args;
+  -moz-transform-origin: $args;
+  -ms-transform-origin: $args;
+  -o-transform-origin: $args;
+  transform-origin: $args;
+}
+
+@mixin animation($args...) {
+  -webkit-animation: $args;
+  -moz-animation: $args;
+  animation: $args;
+}
+
+@mixin stickynav-transition($time, $time2...) {
+  -webkit-transition: -webkit-transform $time, visibility $time2;
+  -moz-transition: -moz-transform $time, visibility $time2;
+  transition: transform $time, visibility $time2;
+}
+
+
+
+
+/* MIXINS FOR RESPONSIVENESS
+============================================= */
+
+$phone-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin phone {
+  @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-and-under {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}

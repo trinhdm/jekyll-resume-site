@@ -1,0 +1,49 @@
+{% include head.html %}
+
+<body>
+	<div id="contains" class="contains main-header">
+		<header class="header" id="home">
+			<div class="bg-img"><img src="{{ site.baseurl }}/assets/img/unsplash-small.jpg" alt="Image By Paul Jarvis of Unsplash" /></div>
+
+				<div class="title">
+					<h1>Hello!</h1>
+					<h2>My name is <b>Doreen Trinh.</b></h2>
+					<p>I'm a Junior Web Developer.</p>
+
+					<nav id="header-nav">
+						<a href="#about"><span>About Me</span><span>See my skills</span></a>
+						<a href="#projects"><span>Projects</span><span>View my works</span></a>
+						<a href="#contact"><span>Contact</span><span>View my resume</span></a>
+            <a href="blog"><span>Blog</span><span>Read my musings</span></a>
+					</nav>
+
+				</div>
+			</header>
+
+			<button class="trigger" data-info=""><span>arrow</span></button>
+
+			<div id="hidden-sticky-nav">
+				<a href="javascript:;" class="sticky-trigger">Menu<span></span></a>
+					<nav id="sticky-nav">
+						<ul>
+							<li><a href="#about"><span>About Me</span></li></a>
+							<li><a href="#projects"><span>Projects</span></li></a>
+							<li><a href="#contact"><span>Contact</span></li></a>
+							<li><a href="blog"><span>Blog</span></li></a>
+						</ul>
+				</nav>
+			</div>
+
+
+			<article class="content">
+        {{ content }}
+			</article>
+
+
+{% include footer.html %}
+
+<script src="{{ site.baseurl }}/assets/js/sticky-nav.js"></script>
+<script src="{{ site.baseurl }}/assets/js/home-header.js"></script>
+
+<script src="{{ site.baseurl }}/assets/js/cssParser.js"></script>
+<script src="{{ site.baseurl }}/assets/js/toucheffects.js"></script>

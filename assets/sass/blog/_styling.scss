@@ -1,0 +1,74 @@
+#blog {
+  h1 {
+    font: 1.4em $titleFont;
+  }
+
+  .post {
+    padding: 20px 0;
+    border-bottom: 2px solid $light-gray;
+
+    &:hover {
+      background-color: $off-white;
+      // border-bottom: 2px solid $off-white;
+      @include transition(all .5s ease);
+    }
+  }
+
+  .post-title {
+    color: $periwinkle-blue;
+  }
+
+  .post-timedate {
+    float: right;
+    font: italic .85em $titleFont;
+    color: $steel-blue;
+  }
+
+  .post-description {
+    font: italic .7em $titleFont;
+    color: $dark-gray-blue;
+  }
+}
+
+#blogpost {
+  font: .8em/1.8em $secondFont;
+  color: $dark-gray;
+
+  a:hover {
+    color: $light-blue;
+  }
+
+  p {
+    margin: 0 0 20px;
+  }
+
+  blockquote {
+    font: italic 1.3em/1.9em $titleFont;
+  }
+
+  h1, h2 {
+    color: $dark-gray-blue;
+    margin: .85em 0 .5em;
+  }
+
+  h1 {
+    font-family: $titleFont;
+  }
+}
+
+
+#post-author {
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 1px solid;
+
+  h4 {
+    font: 1em $titleFont;
+    color: $dark-gray;
+  }
+
+  span {
+    font: italic .7em $titleFont;
+    color: $dark-gray-blue;
+  }
+}

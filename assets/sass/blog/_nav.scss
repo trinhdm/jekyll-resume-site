@@ -1,0 +1,59 @@
+#top-bar {
+  height: 10px;
+  background: url("../img/unsplash-small.jpg") fixed bottom right;
+  background-position: 0 270px;
+}
+
+#blog-nav {
+  background-color: transparent;
+  border: 0px solid transparent;
+  text-align: right;
+  z-index: 9999;
+  @include animation(sticky-fadeIn 0.6s linear);
+
+  @include phone {
+    background-color: #fff;
+    text-align: center;
+  }
+
+  &.hidden {
+		opacity: 0;
+	}
+
+  li {
+    padding: 10px 20px;
+    background-color: transparent;
+  }
+
+  a {
+    color: $dark-gray;
+    font: .85em $secondFont;
+    padding: 10px 0;
+
+    &:hover {
+      color: $dark-gray-blue;
+      @include transition(all .3s ease);
+    }
+  }
+
+  .active a,
+  .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    background-color: transparent;
+    color: $periwinkle-blue;
+    border-bottom: 2px solid $dark-gray-blue;
+  }
+
+  a, .active a {
+    &:hover {
+      color: $light-blue;
+    }
+  }
+
+  .icon-bar {
+    background-color: $dark-gray-blue;
+  }
+
+  .navbar-toggle {
+    background-color: $off-white;
+  }
+}
