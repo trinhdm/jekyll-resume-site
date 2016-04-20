@@ -58,7 +58,7 @@
 
 
 #post-author {
-  padding: 20px 0;
+  padding: 20px 0 80px;
   margin-top: 40px;
   border-top: 1px solid;
 
@@ -67,8 +67,13 @@
     color: $dark-gray;
   }
 
-  span {
+  p, span {
     font: italic .7em $titleFont;
     color: $dark-gray-blue;
+  }
+
+  .fa {
+    font-size: 1.5em;
+    padding-right: 20px;
   }
 }

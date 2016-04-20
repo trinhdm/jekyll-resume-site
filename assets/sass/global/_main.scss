@@ -29,6 +29,7 @@ a {
 	outline: none;
 	color: $periwinkle-blue;
 	text-decoration: none;
+	@include transition(color .3s ease);
 
   &:hover, &:focus {
     color: $purple;
