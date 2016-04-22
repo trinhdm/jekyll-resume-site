@@ -1,0 +1,64 @@
+body {
+  font: 1.35em $bodyFont;
+}
+
+h1, h2, h3 {
+  font-family: $titleFont;
+}
+
+h1 {
+  color: $gray;
+}
+
+h2 {
+  font-size: 2em;
+  color: $black;
+}
+
+h3 {
+  color: $dark-gray;
+}
+
+a {
+  color: $gray;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    text-decoration: none;
+    color: $gray;
+  }
+}
+
+.container a, .modal-content a {
+  &:hover:not(.buttonlink):not(.board-hover-link), &:focus:not(.buttonlink):not(.board-hover-link) {
+    color: $black;
+    position: relative;
+    bottom: 1px;
+    @include transition(all .3s ease);
+  }
+}
+
+.modal-backdrop.in  {
+  opacity: .2 !important;
+}
+
+.modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -o-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    box-shadow: 0 5px 15px rgba(0,0,0,0);
+    border-radius: 0;
+}
+
+.modal-header {
+  padding: 0;
+  border: 0px solid transparent;
+
+  .close {
+    padding: 15px 15px 0 0;
+  }
+}
+
+.modal-body {
+  padding: 15px 30px;
+}

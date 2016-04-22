@@ -1,3 +1,4 @@
+<div id="top"></div>
 <div id="top-bar"></div>
 <nav id="blog-nav" class="navbar navbar-default">
 <div class="container-fluid">
@@ -13,33 +14,7 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
-      {% if page.url == '/about.html' %}
-        <li class="active">
-      {% else %}
-        <li>
-      {% endif %}
-      <a href="/index.html">Home</a></li>
-
-      {% if page.url == '/index.html#portfolio' %}
-        <li class="active">
-      {% else %}
-        <li>
-      {% endif %}
-      <a href="/index.html#portfolio">Portfolio</a></li>
-
-      {% if page.url == '/index.html#contact' %}
-        <li class="active">
-      {% else %}
-        <li>
-      {% endif %}
-      <a href="/index.html#contact">Resume</a></li>
-
-      {% if page.url == '/blog/' %}
-        <li class="active">
-      {% else %}
-        <li>
-      {% endif %}
-      <a href="/blog/">Blog</a></li>
+      {% include nav.html %}
     </ul>
   </div>
   <!-- /.navbar-collapse -->

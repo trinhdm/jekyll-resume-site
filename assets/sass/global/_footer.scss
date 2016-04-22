@@ -1,12 +1,39 @@
 .footer {
-  background-color: #EFEFEF;
+  background-color: $off-white;
+  border-top: 1px solid rgba(0,0,0,.2);
   color: $steel-blue;
   padding: 10px 0 10px 190px;
   font: 10pt $titleFont;
   position: relative;
-  margin-top: -50px;
-  height: 50px;
+  margin-top: -200px;
+  height: 200px;
   clear:both;
+
+  p, h4 {
+    line-height: 1.3em;
+  }
+
+  .row {
+    padding-top: 10px;
+  }
+
+  .fa-2x {
+    padding-right: 25px;
+  }
+
+  .fa-envelope, .fa-phone {
+    &::after {
+      content: ":"
+    }
+  }
+
+  .fa-envelope {
+    padding-right: 10px;
+  }
+
+  .fa-phone {
+    padding-right: 13px;
+  }
 
   @include phone {
     padding: 10px 0;
@@ -16,5 +43,77 @@
   @include tablet {
     padding: 10px 0;
     text-align: center;
+  }
+
+  #footerlinks {
+    margin-top: 10px;
+
+    p {
+      color: rgba(0,0,0,0.2);
+    }
+  }
+}
+
+button.back-to-top {
+  position: absolute;
+  bottom: 13.5%;
+  right: 6.5%;
+  z-index: 50;
+	display: block;
+	padding: 0;
+	width: 1em;
+	height: 1em;
+	border: none;
+	background: transparent;
+	color: transparent;
+	font-size: 2em;
+	cursor: pointer;
+  overflow: hidden;
+
+  span {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    text-indent: 100%;
+
+    &::before {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+      text-indent: 0%;
+    	color: $dark-gray-blue;
+    	content:  "\f077";
+    	font-family: 'FontAwesome';
+    	text-transform: none;
+    	font-weight: normal;
+    	font-style: normal;
+    	font-variant: normal;
+    	line-height: 1;
+    	speak: none;
+    	-webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+    }
+  }
+
+  &::before {
+  	position: absolute;
+  	bottom: 100%;
+  	left: -100%;
+  	padding: 0.8em;
+  	width: 300%;
+  	color: $dark-gray-blue;
+  	content: attr(data-info);
+  	font-size: 0.35em;
+  	-webkit-backface-visibility: hidden;
+  	backface-visibility: hidden;
+  }
+
+  @include phone {
+    bottom: 20px;
+    right: 20px;
   }
 }

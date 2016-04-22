@@ -2,13 +2,13 @@
 
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-
+<div id="top"></div>
 <div id="container" class="container blog-animation">
   <header class="blog-header">
 
     <ul class="back-to-blog">
       <li>
-        <a href="/blog/" class="back-to-blog"><i class="fa fa-chevron-left"></i> back</a></li>
+        <a href="/writings/" class="back-to-blog"><i class="fa fa-chevron-left"></i> back</a></li>
       </li>
     </ul>
 
@@ -27,35 +27,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          {% if page.url == '/about.html' %}
-            <li class="active">
-          {% else %}
-            <li>
-          {% endif %}
-          <a href="/index.html">Home</a></li>
-
-          {% if page.url == '/index.html#portfolio' %}
-            <li class="active">
-          {% else %}
-            <li>
-          {% endif %}
-          <a href="/index.html#portfolio">Portfolio</a></li>
-
-          {% if page.url == '/index.html#contact' %}
-            <li class="active">
-          {% else %}
-            <li>
-          {% endif %}
-          <a href="/index.html#contact">Resume</a></li>
-
-          {% if page.url == '/blog/' %}
-            <li class="active">
-          {% elsif page.date %}
-            <li class="active">
-          {% else %}
-            <li>
-          {% endif %}
-          <a href="/blog/">Blog</a></li>
+          {% include nav.html %}
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -72,7 +44,8 @@
 
 </header>
 
-
+<div id="wrap">
+  <div id="main">
   <div class="container" id="blogpost" itemprop="articleBody">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
@@ -82,14 +55,12 @@
         <div id="post-author">
           <h4>Doreen Trinh</h4>
           <p>A junior web developer chronicaling her experiences through the front-end world.</p>
-          <a href="mailto:doreenmtrinh@gmail.com"><i class="fa fa-envelope"></i></a>
-          <a href="https://github.com/trinhdm/"><i class="fa fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/doreen-trinh-378a99100"><i class="fa fa-linkedin"></i></a>
-          <a href="https://dribbble.com/doreeniie"><i class="fa fa-dribbble" style="display: none"></i></a>
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 
 </article>
 

@@ -23,53 +23,53 @@
     right: 10px;
     padding-left: 0;
   }
-}
 
-#hidden-sticky-nav ul li {
-  /* Force Hardware Acceleration in WebKit */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  font: 600 .6em $secondFont;
-  text-transform: uppercase;
-  list-style: none;
-}
+  li {
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    font: 600 .6em $secondFont;
+    text-transform: uppercase;
+    list-style: none;
+    background-color: $off-white;
 
-#hidden-sticky-nav ul.is-visible {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  visibility: visible;
-  @include transform(scale(1));
-  @include stickynav-transition(0.3s, 0s 0s);
-}
+    a {
+      display: block;
+      padding: 1.6em;
+      border-bottom: 1px solid $off-white;
+    }
 
-/* list items animation sliding in */
-#hidden-sticky-nav ul.is-visible li:nth-child(1) {
-  @include animation(sticky-slideIn 0.2s);
-}
+    &:last-child a {
+      border-bottom: none;
+    }
+  }
 
-#hidden-sticky-nav ul.is-visible li:nth-child(2) {
-  @include animation(sticky-slideIn 0.3s);
-}
+  &.is-visible {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    visibility: visible;
+    @include transform(scale(1));
+    @include stickynav-transition(0.3s, 0s 0s);
 
-#hidden-sticky-nav ul.is-visible li:nth-child(3) {
-  @include animation(sticky-slideIn 0.4s);
-}
+    li:nth-child(1) {
+      @include animation(sticky-slideIn 0.2s);
+    }
 
-#hidden-sticky-nav ul.is-visible li:nth-child(4) {
-  @include animation(sticky-slideIn 0.5s);
-}
+    li:nth-child(2) {
+      @include animation(sticky-slideIn 0.3s);
+    }
 
-#hidden-sticky-nav ul.is-visible li:nth-child(5) {
-  @include animation(sticky-slideIn 0.6s);
-}
+    li:nth-child(3) {
+      @include animation(sticky-slideIn 0.4s);
+    }
 
-#hidden-sticky-nav li a {
-  display: block;
-  padding: 1.6em;
-  border-bottom: 1px solid $light-gray;
-}
+    li:nth-child(4) {
+      @include animation(sticky-slideIn 0.5s);
+    }
 
-#hidden-sticky-nav li:last-child a {
-  border-bottom: none;
+    li:nth-child(5) {
+      @include animation(sticky-slideIn 0.6s);
+    }
+  }
 }
 
 @media only screen and (min-width: 1170px) {
@@ -82,17 +82,17 @@
 
   #hidden-sticky-nav li {
     display: inline-block;
-  }
 
-  #hidden-sticky-nav li a {
-    opacity: 1;
-    padding: .4em;
-    margin-left: 1.6em;
-    border-bottom: none;
-  }
+    a {
+      opacity: 1;
+      padding: .4em;
+      margin-left: 1.6em;
+      border-bottom: none;
 
-  #hidden-sticky-nav li a:hover {
-    color: $purple;
+      &:hover {
+        color: $purple;
+      }
+    }
   }
 
   #hidden-sticky-nav.is-fixed ul {
@@ -103,19 +103,19 @@
     max-width: 200px;
     bottom: 20px;
     top: auto;
-    background: #efefef;
+    background: $off-white;
     visibility: hidden;
     @include transform(scale(0));
-  }
 
-  #hidden-sticky-nav.is-fixed ul li {
-    display: block;
-  }
+    li {
+      display: block;
 
-  #hidden-sticky-nav.is-fixed ul li a {
-    padding: 1.6em;
-    margin-left: 0;
-    border-bottom: 1px solid $off-white;
+      a {
+        padding: 1.6em;
+        margin-left: 0;
+        border-bottom: 1px solid $off-white;
+      }
+    }
   }
 
   #hidden-sticky-nav ul.has-transitions {
@@ -140,84 +140,87 @@
 }
 
 .sticky-trigger {
-  // box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
   position: fixed;
   bottom: 5.5%;
   right: 5.5%;
   width: 44px;
   height: 44px;
-  background: #efefef;
+  background: $off-white;
   border-radius: 0.25em;
   /* image replacement */
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  z-index: 2;
+  z-index: 1002;
 
   @include phone {
     bottom: 20px;
     right: 20px;
   }
-}
-.sticky-trigger span {
-  /* the span element is used to create the menu icon */
-  position: absolute;
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: $steel-blue;
-  top: 50%;
-  margin-top: -1px;
-  left: 50%;
-  margin-left: -10px;
-  @include transition(background 0.3s);
-}
-.sticky-trigger span::before, .sticky-trigger span::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  background: inherit;
-  width: 100%;
-  height: 100%;
-  @include transform(translateZ(0));
-  /* Force Hardware Acceleration in WebKit */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: -webkit-transform 0.3s, background 0s;
-  -moz-transition: -moz-transform 0.3s, background 0s;
-  transition: transform 0.3s, background 0s;
-}
 
-.sticky-trigger span::before {
-  top: -6px;
-  @include transform(rotate(0));
-}
+  span {
+    /* the span element is used to create the menu icon */
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: $steel-blue;
+    top: 50%;
+    margin-top: -1px;
+    left: 50%;
+    margin-left: -10px;
+    @include transition(background 0.3s);
 
-.sticky-trigger span::after {
-  bottom: -6px;
-  @include transform(rotate(0));
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      background: inherit;
+      width: 100%;
+      height: 100%;
+      @include transform(translateZ(0));
+      /* Force Hardware Acceleration in WebKit */
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transition: -webkit-transform 0.3s, background 0s;
+      -moz-transition: -moz-transform 0.3s, background 0s;
+      transition: transform 0.3s, background 0s;
+    }
+
+    &::before {
+      top: -6px;
+      @include transform(rotate(0));
+    }
+
+    &::after {
+      bottom: -6px;
+      @include transform(rotate(0));
+    }
+  }
 }
 
 .sticky-trigger.menu-is-open {
+  border: 1px solid transparent;
   box-shadow: none;
-}
 
-.sticky-trigger.menu-is-open span {
-  background: rgba(232, 74, 100, 0);
-}
+  span {
+    background: rgba(232, 74, 100, 0);
 
-.sticky-trigger.menu-is-open span::before, .sticky-trigger.menu-is-open span::after {
-  background: $steel-blue;
-}
+    &::before, &::after {
+      background: $steel-blue;
+    }
 
-.sticky-trigger.menu-is-open span::before {
-  top: 0;
-  @include transform(rotate(135deg));
-}
+    &::before {
+      top: 0;
+      @include transform(rotate(135deg));
+    }
 
-.sticky-trigger.menu-is-open span::after {
-  bottom: 0;
-  @include transform(rotate(225deg));
+    &::after {
+      bottom: 0;
+      @include transform(rotate(225deg));
+    }
+  }
 }
 
 @media only screen and (min-width: 1024px) {

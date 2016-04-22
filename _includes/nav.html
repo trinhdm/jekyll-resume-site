@@ -1,0 +1,22 @@
+{% if page.url == '/about.html' %}
+  <li class="active">
+{% else %}
+  <li>
+{% endif %}
+<a href="/index.html">Home</a></li>
+
+{% if page.url == '/index.html#contact' %}
+  <li class="active">
+{% else %}
+  <li>
+{% endif %}
+<a href="{{ site.baseurl }}/assets/pdf/resume_doreen trinh2.pdf">Resume</a></li>
+
+{% if page.url == '/writings/' %}
+  <li class="active">
+{% elsif page.id %}
+  <li class="active">
+{% else %}
+  <li>
+{% endif %}
+<a href="/writings/">Writings</a></li>

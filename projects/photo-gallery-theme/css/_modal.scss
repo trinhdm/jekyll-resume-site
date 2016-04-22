@@ -1,0 +1,173 @@
+button {
+	border: none;
+	padding: 0.6em 2.2em;
+	background: $dark-gray;
+	color: $green;
+	font-family: $body-font;
+	font-size: 0.9em;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+	margin: 3px 2px;
+
+  &:hover {
+    background-color: #000;
+    @include transition(all .3s ease);
+  }
+}
+
+.md-perspective,
+.md-perspective body {
+	height: 100%;
+}
+
+.md-perspective body  {
+	background: #222;
+}
+
+.md-modal {
+	position: fixed;
+  overflow-y: auto;
+	top: 50%;
+	left: 50%;
+	width: auto;
+  max-width: 95%;
+  min-width: auto;
+	height: auto;
+	z-index: 2000;
+	visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.md-show {
+	visibility: visible;
+}
+
+.md-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	opacity: 0;
+	background: rgba(143,27,15,0.8);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.md-show ~ .md-overlay {
+	opacity: 1;
+	visibility: visible;
+}
+
+
+.md-content {
+	border: 1px solid $dark-gray;
+  overflow: auto;
+	color: #fff;
+	background: $gray;
+  padding: 2em;
+	position: relative;
+	margin: 0 auto;
+
+  img {
+    width: auto !important;
+    height: 80vh !important;
+    margin: 0 auto !important;
+    opacity: 1 !important;
+    -webkit-filter: grayscale(0) !important;
+    filter: grayscale(0) !important;
+
+		@include phone {
+			width: 80vw !important;
+	    height: auto !important;
+		}
+  }
+
+	@-moz-document url-prefix() {
+    img {
+      height: 80vh !important;
+			width: auto !important;
+
+			@include phone {
+				width: 80vw !important;
+		    height: auto !important;
+			}
+    }
+	}
+}
+
+.md-content h3 {
+	margin: 0;
+	padding: 0.4em;
+	text-align: center;
+	font-size: 2.4em;
+	font-weight: 300;
+	opacity: 0.8;
+	background: rgba(0,0,0,0.1);
+	border-radius: 3px 3px 0 0;
+}
+
+.md-content > div {
+	padding: 15px 40px 30px;
+	margin: 0;
+	font-weight: 300;
+	font-size: 1.15em;
+}
+
+.md-content > div p {
+	margin: 0;
+	padding: 10px 0;
+}
+
+.md-content > div ul {
+	margin: 0;
+	padding: 0 0 30px 20px;
+}
+
+.md-content > div ul li {
+	padding: 5px 0;
+}
+
+.md-content button {
+	display: block;
+	margin: 2em auto 0 auto;
+}
+
+.sliding {
+	top: 0;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+
+	.md-content {
+		-webkit-transform: translateY(-200%);
+		-moz-transform: translateY(-200%);
+		-ms-transform: translateY(-200%);
+		transform: translateY(-200%);
+		-webkit-transition: all .3s;
+		-moz-transition: all .3s;
+		transition: all .3s;
+		opacity: 0;
+	}
+}
+
+.md-show.sliding .md-content {
+	-webkit-transform: translateY(0%);
+	-moz-transform: translateY(0%);
+	-ms-transform: translateY(0%);
+	transform: translateY(0%);
+	border-radius: 0 0 3px 3px;
+	opacity: 1;
+}

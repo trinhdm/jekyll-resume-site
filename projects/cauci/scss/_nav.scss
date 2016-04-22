@@ -1,0 +1,230 @@
+#caucinav {
+  background-color: #fff;
+  height: 110px;
+	overflow: visible;
+	-webkit-transition: height 0.3s;
+	-moz-transition: height 0.3s;
+	transition: height 0.3s;
+
+  @include desktop-and-under {
+    height: auto;
+    padding-bottom: 15px;
+  }
+
+  a {
+    font: 600 .9em/80px $mainFont;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+  	-moz-user-select: none;
+  	-ms-user-select: none;
+  	user-select: none;
+  	-webkit-touch-callout: none;
+  	-khtml-user-select: none;
+  	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    &:hover, &:focus {
+      outline: none;
+      text-decoration: none;
+      background-color: transparent;
+    }
+  }
+
+  li {
+    padding: 0 12px;
+
+    @include desktop-and-under {
+      padding: 0 30px;
+    }
+  }
+
+  .nav-social {
+    font-size: 1.6em;
+    color: $dark-gray;
+    line-height: 80px;
+    @include transition(all ease-out .5s);
+    padding: 15px 5px;
+
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  .navbar-brand img {
+    width: 130px;
+    height: auto;
+    float: left;
+
+    @include desktop-and-under {
+      width: 85px;
+    }
+  }
+}
+
+/* Transitions and class for reduced height */
+#caucinav h1, #caucinav .navlink::before,
+#caucinav a, #caucinav img {
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+#caucinav.caucinav-shrink {
+	height: 80px;
+  // background-color: #fafafa;
+
+  @include desktop-and-under {
+    height: auto;
+  }
+}
+
+#caucinav.caucinav-shrink a,
+#caucinav.caucinav-shrink .nav-social {
+	line-height: 50px;
+}
+
+#caucinav.caucinav-shrink a {
+	font-size: .85em;
+}
+
+#caucinav.caucinav-shrink .navlink::before {
+  bottom: 18px;
+}
+
+#caucinav.caucinav-shrink .nav-social {
+	font-size: 1.5em;
+}
+
+#caucinav.caucinav-shrink .navbar-brand img {
+	width: 85px;
+}
+
+#caucinav a, #caucinav.caucinav-shrink a {
+  @include desktop-and-under {
+    font-size: .9em;
+    line-height: normal;
+  }
+}
+
+#caucinav .nav-social, #caucinav.caucinav-shrink .nav-social {
+  @include desktop-and-under {
+    font-size: 1.5em;
+    text-align: center;
+    line-height: normal;
+    display: inline-block;
+    float: left;
+    padding: 15px 10px;
+  }
+}
+
+.navbar-right {
+  padding-right: 25px;
+
+  @include desktop-and-under {
+    width: 240px;
+    margin: auto;
+    padding-right: 0;
+  }
+}
+
+.navlink {
+	color: $dark-gray;
+  text-align: center;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  &:hover, &:focus {
+  	outline: none;
+    text-decoration: none;
+    color: $gray;
+  }
+
+  &::before {
+    content: '';
+  	position: absolute;
+  	bottom: 30px;
+  	left: 0;
+  	width: 100%;
+  	height: 2px;
+  	background: $gray;
+  	-webkit-transform: scale3d(0, 1, 1);
+  	transform: scale3d(0, 1, 1);
+  	-webkit-transition: -webkit-transform 0.1s;
+  	transition: transform 0.1s;
+
+    @include desktop-and-under {
+      height: 0;
+      background: transparent;
+    }
+  }
+}
+
+.navlink-active .navlink {
+	color: $gray;
+
+  &::before {
+    -webkit-transform: scale3d(1, 1, 1);
+  	transform: scale3d(1, 1, 1);
+  	-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  	-webkit-transition-duration: 0.3s;
+  	transition-duration: 0.3s;
+  }
+}
+
+
+.navbar-toggle {
+  border: 1px solid $dark-gray;
+  margin: 20px 20px 8px 0;
+
+  .icon-bar {
+    background-color: $gray;
+  }
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+		top: 0;
+		border-width: 0 0 1px;
+	}
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+		margin-top: 7.5px;
+	}
+	.navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+  		display:block !important;
+	}
+}

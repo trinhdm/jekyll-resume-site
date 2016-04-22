@@ -1,0 +1,250 @@
+#chat-news {
+  padding: 50px 0 20px 0;
+
+  .row {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .col-md-5 {
+    text-align: right;
+    padding-right: 40px;
+
+    @include desktop-and-under {
+      padding-left: 40px;
+
+      h2 {
+        text-align: left;
+      }
+    }
+  }
+
+  .col-md-6 {
+    padding-left: 40px;
+
+    @include desktop-and-under {
+      padding-right: 40px;
+    }
+
+    p {
+      text-transform: uppercase;
+      font: 600 1.1em/2em $mainFont;
+      color: $gray;
+    }
+  }
+
+  #chatbox {
+    position: relative;
+    height: 200px;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #ababab;
+  }
+
+  #chatmsg {
+    position: relative;
+    height: 80px;
+    overflow: hidden;
+    border: 1px solid #ababab;
+    border-top: 0;
+  }
+}
+
+#about, #membership {
+  li {
+    border: 1px solid $gray;
+
+    &:hover {
+      border: 1px solid #000;
+    }
+  }
+
+  img {
+    float: left;
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    z-index: 100;
+  }
+
+  .col-md-6 {
+    padding: 0;
+    line-height: 1.5em;
+  }
+}
+
+#about, #membership, #questions {
+  ul {
+    padding: 0;
+    margin-top: 35px;
+  }
+
+  li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 2.5em;
+    font: .9em $titleFont;
+
+    &:hover {
+      @include transition(all .5s ease);
+    }
+  }
+}
+
+#about {
+  background-color: $light-blue;
+  height: 500px;
+  width: 100%;
+  margin-top: 50px;
+
+  @include desktop-and-under {
+    height: 100%;
+  }
+
+  p {
+    vertical-align: middle;
+  }
+
+  img {
+    @include desktop-and-under {
+      margin-bottom: 70px;
+    }
+  }
+
+  .about-text {
+    padding: 70px 70px 0 35px;
+
+    @include desktop-and-under {
+      margin-bottom: 70px;
+    }
+  }
+}
+
+
+#membership {
+  background-color: $light-gray;
+  height: 500px;
+  width: 100%;
+
+  @include tablet {
+    height: 100%;
+  }
+
+  @include phone {
+    height: 100%;
+  }
+
+  li {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .membership-text {
+    padding: 90px 35px 0 70px;
+    text-align: right;
+
+    @include desktop-and-under {
+      padding-top: 70px;
+      margin-bottom: 70px;
+    }
+  }
+}
+
+#sponsors {
+  padding: 100px 0 120px 0;
+
+  @include desktop-and-under {
+    padding: 100px 40px 120px 40px;
+  }
+
+  .col-md-10 {
+    text-align: center;
+  }
+
+  .col-md-4:hover h1 {
+    color: $black;
+    position: relative;
+    bottom: 1px;
+    @include transition(all .3s ease);
+    cursor: default;
+  }
+}
+
+#questions {
+  padding: 50px 0;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.25)
+    ),
+    url("http://cauci.com/media/slide/semiformal1.jpg");
+
+  li {
+    border: 1px solid #000;
+    color: #000;
+
+    &:hover {
+      border: 1px solid $gray;
+    }
+  }
+}
+
+
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-6px);
+    -ms-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.faa-float.animated,
+.faa-float.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-float {
+  -webkit-animation: float 2s linear infinite;
+  animation: float 2s linear infinite;
+}
+
+.faa-float.animated.faa-fast,
+.faa-float.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-float.faa-fast {
+  -webkit-animation: float 1s linear infinite;
+  animation: float 1s linear infinite;
+}
+
+.faa-float.animated.faa-slow,
+.faa-float.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-float.faa-slow {
+  -webkit-animation: float 3s linear infinite;
+  animation: float 3s linear infinite;
+}

@@ -1,0 +1,188 @@
+#board {
+  margin-top: 110px;
+  text-align: center;
+
+  img {
+    height: 450px;
+    width: 300px;
+  }
+
+  p {
+    padding-bottom: 30px;
+  }
+}
+
+
+.board-grid {
+	position: relative;
+	margin: 0 auto;
+	max-width: 1000px;
+	list-style: none;
+	text-align: center;
+  padding-bottom: 30px;
+
+  figure {
+  	position: relative;
+  	overflow: hidden;
+  	max-width: 300px;
+  	max-height: 450px;
+  	background: $light-gray;
+  	text-align: center;
+  	cursor: pointer;
+    pointer-events: auto;
+    margin: auto;
+
+    h2 {
+    	word-spacing: -0.15em;
+    	font-weight: 300;
+
+      span {
+      	font-weight: 800;
+      }
+    }
+
+    p {
+    	letter-spacing: 1px;
+    	font-size: 68.5%;
+    }
+
+    h2, p {
+      margin: 0;
+    }
+
+    img {
+    	position: relative;
+    	display: block;
+    	min-height: 100%;
+    	max-width: 100%;
+    	opacity: 0.8;
+    }
+
+    figcaption {
+    	padding: 2em;
+    	color: #fff;
+    	font-size: 1.25em;
+    	-webkit-backface-visibility: hidden;
+    	backface-visibility: hidden;
+    }
+
+    figcaption, figcaption > a {
+      position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+    }
+  }
+}
+
+
+figure.board-hover {
+	background: $dark-gray;
+
+  a {
+    bottom: 0 !important;
+  }
+
+  img {
+  	opacity: 0.9;
+  	-webkit-transition: opacity 0.35s;
+  	transition: opacity 0.35s;
+  }
+
+  h2 {
+  	position: absolute;
+  	bottom: 0;
+  	left: 0;
+  	padding: 1em 1.5em;
+  	width: 100%;
+  	text-align: left;
+    color: #fff;
+    font-family: $mainFont;
+    text-transform: uppercase;
+  	-webkit-transform: translate3d(0,-30px,0);
+  	transform: translate3d(0,-30px,0);
+
+    i {
+    	opacity: 0;
+      font: italic .6em $titleFont;
+      letter-spacing: 1px;
+      text-transform: lowercase;
+      text-align: right;
+    	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    	transition: opacity 0.35s, transform 0.35s;
+    	-webkit-transform: translate3d(0,-30px,0);
+    	transform: translate3d(0,-30px,0);
+    }
+
+    u {
+      text-decoration: none;
+      font-size: 80%;
+      position: relative;
+      top: -5px;
+    }
+
+    .fa {
+      font: italic .55em FontAwesome;
+      padding-left: 5px;
+    }
+  }
+
+  figcaption::before, h2 {
+    -webkit-transition: -webkit-transform 0.35s;
+  	transition: transform 0.35s;
+  }
+
+  &:hover {
+    bottom: 0 !important;
+
+    img {
+      opacity: 0.5;
+    }
+
+    figcaption::before, h2, h2 i {
+      opacity: 1;
+    	-webkit-transform: translate3d(0,0,0);
+    	transform: translate3d(0,0,0);
+    }
+  }
+}
+
+.board-hover-link {
+  position: relative;
+  bottom: 0 !important;
+}
+
+
+
+#board-about {
+  margin-top: 110px;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  p {
+    line-height: 1.5em;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  h2 {
+    padding-left: 10px;
+    font-size: 2.2em;
+  }
+
+  h3 {
+    margin: 0 auto 20px;
+    font-style: italic;
+    font-size: 1.5em;
+  }
+
+  h1, h2 {
+    display: inline-block;
+  }
+}

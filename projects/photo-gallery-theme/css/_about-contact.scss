@@ -1,0 +1,48 @@
+#about, #contact {
+  display: none;
+  background: $gray;
+  color: $light-gray;
+  position: relative;
+  left: 190px;
+  padding: 20px;
+  font: .9em/1.5em $body-font;
+  width: 71vw;
+
+  h1 {
+    font: 1.15em $title-font;
+    text-transform: uppercase;
+    color: $green;
+    margin-top: 0;
+  }
+
+  b, i {
+    color: $green;
+  }
+
+  span {
+    display: inline-block;
+    padding-right: 3em;
+  }
+}
+
+#about {
+  @include phone {
+    left: 0px;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+    position: fixed;
+    top: 38vh;
+  }
+}
+
+#contact {
+  @include phone {
+    left: 0px;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+    position: fixed;
+    top: 38vh;
+  }
+}

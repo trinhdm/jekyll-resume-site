@@ -1,0 +1,99 @@
+@import url(https://fonts.googleapis.com/css?family=Oxygen:400,300|Source+Sans+Pro:400,300);
+@font-face {
+	font-family: 'feather';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../fonts/feather/feather.eot?1gafuo');
+	src: url('../fonts/feather/feather.eot?1gafuo#iefix') format('embedded-opentype'), url('../fonts/feather/feather.woff2?1gafuo') format('woff2'), url('../fonts/feather/feather.ttf?1gafuo') format('truetype'), url('../fonts/feather/feather.woff?1gafuo') format('woff'), url('../fonts/feather/feather.svg?1gafuo#feather') format('svg');
+}
+
+
+
+/* FONTS/COLORS/KEYFRAMES
+============================================= */
+
+$title-font: 'Oxygen', Helvetica, sans-serif;
+$body-font: 'Source Sans Pro', Helvetica, sans-serif;
+
+
+$green: #86AC41;
+$olive: #4B7447;
+$gray: #222;
+$light-gray: #bdbdbd;
+$dark-gray: #121212;
+
+
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+@-webkit-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@-moz-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+
+
+
+/* REGULAR MIXINS
+============================================= */
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+
+@mixin fading($args, $direction, $time...) {
+	-webkit-animation: $args;
+	-moz-animation: $args;
+	animation: $args;
+
+	-webkit-animation-fill-mode: $direction;
+	-moz-animation-fill-mode: $direction;
+	animation-fill-mode: $direction;
+
+	-webkit-animation-duration: $time;
+	-moz-animation-duration: $time;
+	animation-duration: $time;
+}
+
+@mixin animation-delay($args...) {
+	-webkit-animation-delay: $args;
+	-moz-animation-delay: $args;
+	animation-delay: $args;
+}
+
+
+/* MIXINS FOR RESPONSIVENESS
+============================================= */
+
+$phone-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin phone {
+  @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-and-under {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}

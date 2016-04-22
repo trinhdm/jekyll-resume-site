@@ -1,0 +1,197 @@
+.nav-tooltip {
+	display: inline;
+	position: relative;
+	z-index: 999;
+}
+
+/* trigger text */
+.nav-tooltip-item {
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 700;
+  pointer-events: none;
+}
+
+/* gap filler */
+.nav-tooltip-item::after {
+	content: '';
+	position: absolute;
+	width: 100px;
+	height: 20px;
+	bottom: 100%;
+	left: 50%;
+	pointer-events: none;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.nav-tooltip:hover .nav-tooltip-item::after {
+	pointer-events: auto;
+}
+
+/* content */
+.nav-tooltip-content {
+	position: absolute;
+	z-index: 9999;
+	width: 95px;
+	left: 50%;
+  top: 40px;
+	margin: 0 0 20px -47px;
+	bottom: 100%;
+	text-align: left;
+	line-height: 1.4;
+	background: $dark-blue;
+	opacity: 0;
+	cursor: default;
+	// pointer-events: none;
+}
+
+.nav-tooltip-hover .nav-tooltip-content {
+	-webkit-transform: translate3d(0,-10px,0);
+	transform: translate3d(0,-10px,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.nav-tooltip:hover .nav-tooltip-content {
+	pointer-events: auto;
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0) rotate3d(0,0,0,0);
+	transform: translate3d(0,0,0) rotate3d(0,0,0,0);
+}
+
+.nav-tooltip.nav-tooltip-effect-2:hover .nav-tooltip-content {
+	-webkit-transform: perspective(1000px) rotate3d(1,0,0,0deg);
+	transform: perspective(1000px) rotate3d(1,0,0,0deg);
+}
+
+/* arrow */
+.nav-tooltip-content::after {
+	content: '';
+	top: -20px;
+	left: 50%;
+	border: solid transparent;
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: transparent;
+	border-bottom-color: $dark-blue;
+	border-width: 10px;
+	margin-left: -10px;
+}
+
+/* nav-tooltip content */
+.nav-tooltip-text {
+	display: block;
+	padding: .7em .3em;
+	color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  background-color: $dark-blue;
+  font: .48em $bodyFont;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  pointer-events: none;
+  cursor: default;
+}
+
+
+
+/* FOOTER TOOLTIP styling */
+
+.footer-tooltip {
+	display: inline;
+	position: relative;
+	z-index: 999;
+}
+
+/* trigger text */
+.footer-tooltip-item {
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 700;
+  pointer-events: none;
+}
+
+/* gap filler */
+.footer-tooltip-item::after {
+	content: '';
+	position: absolute;
+	width: 100px;
+	height: 20px;
+	bottom: 100%;
+	left: 50%;
+	pointer-events: none;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.footer-tooltip:hover .footer-tooltip-item::after {
+	pointer-events: auto;
+}
+
+/* content */
+.footer-tooltip-content {
+	position: absolute;
+	z-index: 9999;
+	width: 95px;
+	left: 50%;
+	margin: 0 0 20px -47px;
+	bottom: 100%;
+	text-align: left;
+	line-height: 1.4;
+	background: $dark-blue;
+	opacity: 0;
+	cursor: default;
+	// pointer-events: none;
+}
+
+.footer-tooltip-hover .footer-tooltip-content {
+	-webkit-transform: translate3d(0,-10px,0);
+	transform: translate3d(0,-10px,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.footer-tooltip:hover .footer-tooltip-content {
+	pointer-events: auto;
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0) rotate3d(0,0,0,0);
+	transform: translate3d(0,0,0) rotate3d(0,0,0,0);
+}
+
+.footer-tooltip.footer-tooltip-effect-2:hover .footer-tooltip-content {
+	-webkit-transform: perspective(1000px) rotate3d(1,0,0,0deg);
+	transform: perspective(1000px) rotate3d(1,0,0,0deg);
+}
+
+/* arrow */
+.footer-tooltip-content::after {
+	content: '';
+	left: 50%;
+	border: solid transparent;
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: transparent;
+	border-top-color: $dark-blue;
+	border-width: 10px;
+	margin-left: -10px;
+}
+
+/* footer-tooltip content */
+.footer-tooltip-text {
+	display: block;
+	padding: 1em 0;
+	color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  background-color: $dark-blue;
+  font: .75em $bodyFont;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  pointer-events: none;
+  cursor: default;
+}

@@ -1,0 +1,134 @@
+#grid {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 175px;
+  width: calc(100% - 175px);
+
+  @include phone {
+    width: 100%;
+    left: 0;
+  }
+
+  .row {
+    margin: 0;
+    padding: 0;
+    float:right;
+    overflow: hidden;
+  }
+
+  .col-md-3 {
+    margin: 0;
+    padding: 0;
+    height: 275px;
+    object-fit: cover;
+  }
+
+  .col-md-4, .col-sm-2, .col-xs-12 {
+    overflow: hidden;
+  }
+
+  @include phone {
+    .col-xs-12 {
+      height: 400px;
+    }
+  }
+
+  img {
+    display: table-cell;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: .8;
+    -webkit-filter: grayscale(.5);
+    filter: grayscale(.5);
+  }
+
+  figure {
+    overflow: hidden;
+    cursor: pointer;
+
+    p {
+      display: inline-block;
+      color: $green;
+    	-webkit-transform: translate3d(0,100%,0);
+    	transform: translate3d(0,100%,0);
+      position: absolute;
+    	bottom: -0.3em;
+    	padding: 0 2em;
+    	width: 100%;
+    	text-transform: uppercase;
+      font: 80% 'Source Sans Pro';
+    	letter-spacing: 1px;
+    	-webkit-backface-visibility: hidden;
+    }
+
+    &:hover img {
+      opacity: 1;
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+      @include transition(all .3s ease);
+    }
+
+    &:hover figcaption {
+      -webkit-transform: translate3d(0,0,0);
+    	transform: translate3d(0,0,0);
+
+      p {
+        -webkit-transform: translate3d(0,0,0);
+      	transform: translate3d(0,0,0);
+        -webkit-transition: -webkit-transform 0.35s;
+      	transition: transform 0.35s;
+        -webkit-transition-delay: 0.05s;
+      	transition-delay: 0.05s;
+      }
+    }
+  }
+
+  figcaption {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative;
+    top: -28px;
+    height: 2em;
+    background: rgba(34,34,34,.9);
+    color: #3c4a50;
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+  }
+
+  .fade-grid {
+    opacity:0;  /* make things invisible upon start */
+    @include fading(fadeIn ease-in 1, forwards, 1s);
+  }
+
+  .animalsfade, .fading {
+    @include animation-delay(.25s);
+  }
+
+  .woodfade {
+    @include animation-delay(.5s);
+  }
+
+  .yumfade {
+    @include animation-delay(.7s);
+  }
+
+  .peoplefade {
+    @include animation-delay(.9s);
+  }
+
+  .waterfade {
+    @include animation-delay(1.15s);
+  }
+
+  .winterfade {
+    @include animation-delay(1.3s);
+  }
+
+  .cityfade {
+    @include animation-delay(1.6s);
+  }
+}

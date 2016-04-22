@@ -22,7 +22,7 @@ body {
 
 #main {
   overflow:auto;
-  padding-bottom: 60px; /* this needs to be bigger than footer height*/
+  padding-bottom: 200px; /* this needs to be bigger than footer height*/
 }
 
 a {
@@ -105,4 +105,74 @@ a {
       @include fa-li;
     }
   }
+}
+
+
+
+.content {
+	margin: 0 auto;
+	padding: 0 0 3em;
+
+  h3 {
+  	margin: 0;
+  	font-size: 1.4em;
+  }
+
+  blockquote {
+   	padding: 0.25em;
+   	font-style: italic;
+   	font: 1.65em $titleFont;
+   	line-height: 1.4;
+
+
+   	&::before {
+   		content: '\201C';
+   	}
+
+   	&::after {
+   		content: '\201D';
+   	}
+ 	}
+}
+
+.content > div:not(.title) {
+  .fa {
+    padding-right: 1.5em;
+
+    &:hover {
+      border-bottom: 0px solid transparent;
+      color: $purple;
+      @include transition(all .5s ease);
+    }
+  }
+
+	.next {
+		margin-top: 70px;
+		height: 20px;
+		display: inline-block;
+		float: right;
+		font-size: .9em;
+
+		@include tablet {
+			display: none;
+		}
+
+		@include phone {
+			display: none;
+		}
+
+		p {
+			line-height: 20px;
+			opacity: .7;
+		}
+
+		i {
+			vertical-align: middle;
+			padding-right: .5em;
+		}
+
+		&:hover, a:hover {
+			color: $periwinkle-blue;
+		}
+	}
 }
