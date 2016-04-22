@@ -9,6 +9,7 @@
 
 		@include phone {
 			width: 90%;
+			margin-left: 20px;
 		}
 	}
 
@@ -72,6 +73,7 @@
 			-webkit-transform: translateY(-50%);
 			transform: translateY(-50%);
 			width: 90%;
+			margin-left: 0;
 		}
 	}
 
